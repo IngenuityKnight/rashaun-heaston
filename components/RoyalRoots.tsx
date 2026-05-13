@@ -43,7 +43,7 @@ export default function RoyalRoots() {
                 conviction: <em>healthy communities start with access.</em>
               </p>
               <p>
-                In a city working to rebuild itself, wellness shouldn't be a
+                In a city working to rebuild itself, wellness shouldn&apos;t be a
                 privilege. Royal Roots offers organic vitamins and wellness
                 essentials made with the people of Detroit in mind — and built
                 by someone who lives here.

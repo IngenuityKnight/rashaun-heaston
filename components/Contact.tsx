@@ -35,13 +35,13 @@ export default function Contact() {
           <div>
             <span className="eyebrow text-gold">Get In Touch</span>
             <h2 className="display text-5xl md:text-7xl mt-6 leading-[0.95]">
-              Let's build{" "}
+              Let&apos;s build{" "}
               <span className="display-italic text-gold">something good.</span>
             </h2>
 
             <p className="mt-8 text-lg text-bone/70 leading-relaxed max-w-md">
-              Whether it's a campaign, a consultation, or a conversation —
-              tell me what you're working on.
+              Whether it&apos;s a campaign, a consultation, or a conversation —
+              tell me what you&apos;re working on.
             </p>
 
             <div className="mt-12 space-y-6">
@@ -155,7 +155,7 @@ export default function Contact() {
                 htmlFor="message"
                 className="eyebrow text-bone/60 block mb-2"
               >
-                Tell me what you're working on
+                Tell me what you&apos;re working on
               </label>
               <textarea
                 name="message"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist } from "next/font/google";
+import { Fraunces } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -9,11 +10,6 @@ const fraunces = Fraunces({
   axes: ["SOFT", "WONK", "opsz"],
 });
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Rashaun Heaston — Brand Strategist & Civil Servant",
@@ -42,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${geist.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${GeistSans.variable}`}>
       <body className="grain">{children}</body>
     </html>
   );

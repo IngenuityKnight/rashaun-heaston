@@ -43,8 +43,8 @@ export default function About() {
                 strategy roles at On Target Living, NTM, and Inner Views.
               </p>
               <p>
-                Today, he helps shape the City of Detroit's voice from inside
-                the Mayor's Office, where he manages nine official platforms and
+                Today, he helps shape the City of Detroit&apos;s voice from inside
+                the Mayor&apos;s Office, where he manages nine official platforms and
                 helps the City communicate with residents about the work
                 reshaping their neighborhoods.
               </p>
