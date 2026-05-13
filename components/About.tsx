@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -16,11 +17,14 @@ export default function About() {
           <div className="md:col-span-4">
             <span className="eyebrow text-moss">About</span>
             <div className="mt-8 sticky top-32">
-              {/* Photo placeholder */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-moss/20 via-sage/10 to-clay/20 rounded-sm relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="eyebrow text-ink/40">Photo of Rashaun</span>
-                </div>
+              <div className="aspect-[4/5] rounded-sm relative overflow-hidden">
+                <Image
+                  src="/headshot.jpeg"
+                  alt="Rashaun Heaston"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
               <p className="eyebrow text-ink/50 mt-4">
                 01 — Detroit, Michigan
