@@ -7,7 +7,7 @@ const services = [
     number: "01",
     title: "Social Media Strategy & Audits",
     description:
-      "A clear plan for who you're speaking to, where, and why. Built from audience research, content audits, and platform-specific strategy.",
+      "A clear plan for who you're speaking to, where, and why. Built from audience research, platform audits, and an honest look at what's working and what isn't.",
     deliverables: [
       "Full platform audit",
       "Audience & competitor analysis",
@@ -19,7 +19,7 @@ const services = [
     number: "02",
     title: "Content Production & Creative Direction",
     description:
-      "End-to-end production for brands and leaders — from concept to camera to cut. Eight years of producing video, podcasts, and campaign content.",
+      "End-to-end production for brands and leaders — from concept through edit. Video, podcast, editorial. Eight years of knowing what works on camera and what doesn't.",
     deliverables: [
       "Video production & editing",
       "Photo & podcast direction",
@@ -29,9 +29,9 @@ const services = [
   },
   {
     number: "03",
-    title: "Brand Storytelling & Video",
+    title: "Brand Storytelling",
     description:
-      "Helping organizations and founders find the story only they can tell. Built on my work at the City of Detroit and from launching Royal Roots from scratch.",
+      "Finding the story only you can tell. Built on years of civic communications work and launching Royal Roots from nothing — this is craft, not templates.",
     deliverables: [
       "Brand narrative & voice",
       "Founder story development",
@@ -41,9 +41,9 @@ const services = [
   },
   {
     number: "04",
-    title: "Founder & Executive Personal Branding",
+    title: "Executive Personal Branding",
     description:
-      "For leaders who need a public voice that matches their work. LinkedIn, speaking, executive content — anchored in substance, not performance.",
+      "For leaders whose public presence needs to match the quality of their work. LinkedIn, speaking, editorial positioning — anchored in substance, not performance.",
     deliverables: [
       "Personal brand positioning",
       "LinkedIn strategy & content",
@@ -55,64 +55,57 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 px-6 md:px-10 bg-ink text-bone">
+    <section id="services" className="py-24 md:py-32 px-6 md:px-10 bg-ink text-bone">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-baseline justify-between mb-20">
-          <div>
-            <span className="eyebrow text-gold">Services</span>
-            <h2 className="display text-5xl md:text-7xl mt-6 leading-[1] max-w-3xl">
-              Strategy and storytelling,{" "}
-              <span className="display-italic text-gold">built for impact.</span>
-            </h2>
-          </div>
+        <div className="flex items-end justify-between pb-10 border-b border-bone/10">
+          <h2 className="display text-5xl md:text-7xl leading-[1]">Services</h2>
+          <a
+            href="#contact"
+            className="eyebrow text-bone/30 link-underline hidden md:inline-block hover:text-bone/60 transition-colors"
+          >
+            Request a quote →
+          </a>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-bone/10">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-ink p-8 md:p-12 group hover:bg-moss/20 transition-colors duration-500"
-            >
-              <div className="flex items-start justify-between mb-6">
-                <span className="eyebrow text-gold">{service.number}</span>
-                <span className="text-bone/30 group-hover:text-gold group-hover:translate-x-1 transition-all">
-                  →
-                </span>
-              </div>
+        {services.map((service, i) => (
+          <motion.div
+            key={service.number}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, delay: i * 0.07 }}
+            className="border-b border-bone/10 py-10 md:py-12 grid md:grid-cols-[80px_1fr_1fr] gap-6 md:gap-12"
+          >
+            <span className="eyebrow text-bone/20 pt-1">{service.number}</span>
 
-              <h3 className="display text-3xl md:text-4xl mb-4 leading-tight">
+            <div>
+              <h3 className="display text-2xl md:text-[1.75rem] leading-tight mb-4">
                 {service.title}
               </h3>
-
-              <p className="text-bone/70 mb-8 leading-relaxed">
+              <p className="text-bone/50 leading-relaxed text-sm md:text-base max-w-sm">
                 {service.description}
               </p>
+            </div>
 
-              <ul className="space-y-2 mb-8">
+            <div>
+              <p className="eyebrow text-bone/20 mb-5">Includes</p>
+              <ul className="space-y-3">
                 {service.deliverables.map((d) => (
-                  <li
-                    key={d}
-                    className="text-sm text-bone/80 flex items-center gap-3"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-gold" />
+                  <li key={d} className="text-sm text-bone/55 flex items-start gap-3">
+                    <span className="mt-[9px] w-3 h-px bg-bone/25 shrink-0" />
                     {d}
                   </li>
                 ))}
               </ul>
-
               <a
                 href="#contact"
-                className="eyebrow text-gold link-underline inline-flex items-center gap-2"
+                className="mt-8 inline-block link-underline eyebrow text-bone/25 hover:text-bone/60 transition-colors"
               >
-                Request a quote
+                Inquire →
               </a>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

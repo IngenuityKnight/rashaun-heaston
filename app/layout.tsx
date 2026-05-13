@@ -10,7 +10,6 @@ const fraunces = Fraunces({
   axes: ["SOFT", "WONK", "opsz"],
 });
 
-
 export const metadata: Metadata = {
   title: "Rashaun Heaston — Brand Strategist & Civil Servant",
   description:

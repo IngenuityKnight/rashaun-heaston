@@ -5,42 +5,41 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 md:px-10">
+    <section id="about" className="py-24 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-12 gap-8 md:gap-16"
+          className="grid md:grid-cols-12 gap-10 md:gap-16"
         >
+          {/* Photo column */}
           <div className="md:col-span-4">
-            <span className="eyebrow text-moss">About</span>
-            <div className="mt-8 sticky top-32">
-              <div className="aspect-[4/5] rounded-sm relative overflow-hidden">
+            <span className="eyebrow text-ink/35 block mb-8">About</span>
+            <div className="sticky top-28">
+              <div className="aspect-[3/4] relative overflow-hidden">
                 <Image
                   src="/headshot.jpeg"
                   alt="Rashaun Heaston"
                   fill
                   className="object-cover object-top"
-                  priority
                 />
               </div>
-              <p className="eyebrow text-ink/50 mt-4">
-                01 — Detroit, Michigan
-              </p>
+              <p className="eyebrow text-ink/30 mt-4">Detroit, Michigan</p>
             </div>
           </div>
 
-          <div className="md:col-span-8 md:pt-12">
-            <h2 className="display text-5xl md:text-7xl mb-12 leading-[1]">
+          {/* Text column */}
+          <div className="md:col-span-8 md:pt-14">
+            <h2 className="display text-4xl md:text-[3.5rem] leading-[1.05] mb-10 max-w-xl">
               Communication and wellness are{" "}
               <span className="display-italic text-moss">
                 both forms of service.
               </span>
             </h2>
 
-            <div className="space-y-6 text-lg leading-relaxed text-ink/85 max-w-2xl">
+            <div className="space-y-5 text-base md:text-lg leading-relaxed text-ink/70 max-w-2xl">
               <p>
                 Rashaun Heaston has spent nearly a decade learning how stories
                 move people — first as a freelance content creator, then through
@@ -54,31 +53,23 @@ export default function About() {
               </p>
               <p>
                 Outside City Hall, he founded{" "}
-                <a
-                  href="#royal-roots"
-                  className="text-moss font-medium link-underline"
-                >
+                <a href="#royal-roots" className="text-moss link-underline">
                   Royal Roots Organics
                 </a>
-                {" "}— an organic wellness brand built on the belief that healthy
-                living is a form of community care, and that better choices
-                should be accessible in Detroit.
-              </p>
-              <p className="display-italic text-2xl md:text-3xl text-moss leading-snug pt-4">
-                Different mediums. Same mission: care for the community he comes
-                from.
+                {" "}— a wellness brand built on the belief that healthy living
+                is a form of community care.
               </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-12 border-t border-ink/10">
+            <div className="mt-14 pt-8 border-t border-ink/10 grid grid-cols-3 gap-6">
               {[
                 { label: "Based in", value: "Detroit, MI" },
                 { label: "Currently", value: "City of Detroit" },
-                { label: "Building", value: "Royal Roots Organics" },
+                { label: "Also building", value: "Royal Roots" },
               ].map((item) => (
                 <div key={item.label}>
-                  <p className="eyebrow text-ink/50">{item.label}</p>
-                  <p className="mt-2 font-medium">{item.value}</p>
+                  <p className="eyebrow text-ink/30 mb-2">{item.label}</p>
+                  <p className="text-sm font-medium">{item.value}</p>
                 </div>
               ))}
             </div>

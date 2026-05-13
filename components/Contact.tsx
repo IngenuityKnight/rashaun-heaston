@@ -29,39 +29,33 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-10 bg-ink text-bone">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20">
-          <div>
-            <span className="eyebrow text-gold">Get In Touch</span>
-            <h2 className="display text-5xl md:text-7xl mt-6 leading-[0.95]">
-              Let&apos;s build{" "}
-              <span className="display-italic text-gold">something good.</span>
+    <section id="contact" className="bg-ink text-bone py-24 md:py-32 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16">
+          {/* Left: heading + contact info */}
+          <div className="md:col-span-4">
+            <h2 className="display text-5xl md:text-6xl leading-[0.95]">
+              Start a<br />conversation.
             </h2>
 
-            <p className="mt-8 text-lg text-bone/70 leading-relaxed max-w-md">
-              Whether it&apos;s a campaign, a consultation, or a conversation —
-              tell me what you&apos;re working on.
-            </p>
-
-            <div className="mt-12 space-y-6">
+            <div className="mt-12 space-y-8">
               <div>
-                <p className="eyebrow text-bone/50">Email</p>
+                <p className="eyebrow text-bone/30 mb-3">Direct</p>
                 <a
                   href="mailto:hello@rashaunheaston.com"
-                  className="display text-2xl mt-2 inline-block link-underline"
+                  className="link-underline text-sm"
                 >
                   hello@rashaunheaston.com
                 </a>
               </div>
               <div>
-                <p className="eyebrow text-bone/50">Elsewhere</p>
-                <div className="flex gap-6 mt-2">
+                <p className="eyebrow text-bone/30 mb-3">Social</p>
+                <div className="flex flex-col gap-2.5">
                   <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-underline"
+                    className="link-underline text-sm text-bone/60 hover:text-bone transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -69,7 +63,7 @@ export default function Contact() {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-underline"
+                    className="link-underline text-sm text-bone/60 hover:text-bone transition-colors"
                   >
                     Instagram
                   </a>
@@ -77,72 +71,82 @@ export default function Contact() {
                     href="https://www.royalrootsorganics.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-underline"
+                    className="link-underline text-sm text-bone/60 hover:text-bone transition-colors"
                   >
-                    Royal Roots
+                    Royal Roots Organics ↗
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Right: form */}
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="md:col-span-7 md:col-start-6 space-y-8"
           >
-            <div>
-              <label htmlFor="name" className="eyebrow text-bone/60 block mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                required
-                className="w-full bg-transparent border-b border-bone/30 py-3 focus:outline-none focus:border-gold transition-colors"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="eyebrow text-bone/60 block mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                className="w-full bg-transparent border-b border-bone/30 py-3 focus:outline-none focus:border-gold transition-colors"
-              />
+            <div className="grid sm:grid-cols-2 gap-8">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="eyebrow text-bone/30 block mb-3"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  className="w-full bg-transparent border-b border-bone/15 pb-3 focus:outline-none focus:border-bone/50 transition-colors text-sm placeholder:text-bone/20"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="eyebrow text-bone/30 block mb-3"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  className="w-full bg-transparent border-b border-bone/15 pb-3 focus:outline-none focus:border-bone/50 transition-colors text-sm placeholder:text-bone/20"
+                  placeholder="your@email.com"
+                />
+              </div>
             </div>
 
             <div>
               <label
                 htmlFor="projectType"
-                className="eyebrow text-bone/60 block mb-2"
+                className="eyebrow text-bone/30 block mb-3"
               >
                 Project Type
               </label>
               <select
                 name="projectType"
                 id="projectType"
-                className="w-full bg-transparent border-b border-bone/30 py-3 focus:outline-none focus:border-gold transition-colors appearance-none cursor-pointer"
+                className="w-full bg-transparent border-b border-bone/15 pb-3 focus:outline-none focus:border-bone/50 transition-colors appearance-none cursor-pointer text-sm text-bone"
               >
-                <option value="consulting" className="bg-ink">
-                  Consulting
+                <option value="strategy" className="bg-ink">
+                  Social Media Strategy
                 </option>
-                <option value="speaking" className="bg-ink">
-                  Speaking
+                <option value="content" className="bg-ink">
+                  Content Production
                 </option>
-                <option value="partnership" className="bg-ink">
-                  Brand Partnership
+                <option value="branding" className="bg-ink">
+                  Brand Storytelling
+                </option>
+                <option value="personal" className="bg-ink">
+                  Executive Personal Branding
                 </option>
                 <option value="other" className="bg-ink">
                   Other
@@ -153,37 +157,39 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="message"
-                className="eyebrow text-bone/60 block mb-2"
+                className="eyebrow text-bone/30 block mb-3"
               >
-                Tell me what you&apos;re working on
+                What are you working on?
               </label>
               <textarea
                 name="message"
                 id="message"
                 rows={4}
                 required
-                className="w-full bg-transparent border-b border-bone/30 py-3 focus:outline-none focus:border-gold transition-colors resize-none"
+                className="w-full bg-transparent border-b border-bone/15 pb-3 focus:outline-none focus:border-bone/50 transition-colors resize-none text-sm placeholder:text-bone/20"
+                placeholder="Tell me about your project, timeline, and what success looks like."
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-ink rounded-full font-medium uppercase text-sm tracking-wider hover:bg-bone transition-colors disabled:opacity-50"
-            >
-              {status === "loading"
-                ? "Sending..."
-                : status === "sent"
-                ? "Message sent ✓"
-                : "Send Message"}
-              {status !== "sent" && <span aria-hidden>→</span>}
-            </button>
+            <div className="flex items-center gap-6">
+              <button
+                type="submit"
+                disabled={status === "loading" || status === "sent"}
+                className="px-8 py-3.5 bg-bone text-ink text-[0.7rem] tracking-widest uppercase font-medium hover:bg-moss hover:text-bone transition-colors disabled:opacity-50"
+              >
+                {status === "loading"
+                  ? "Sending..."
+                  : status === "sent"
+                  ? "Message Sent ✓"
+                  : "Send Message"}
+              </button>
 
-            {status === "error" && (
-              <p className="text-clay text-sm">
-                Something went wrong. Please email directly.
-              </p>
-            )}
+              {status === "error" && (
+                <p className="text-sm text-bone/40">
+                  Something went wrong. Email directly.
+                </p>
+              )}
+            </div>
           </motion.form>
         </div>
       </div>

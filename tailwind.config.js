@@ -16,7 +16,7 @@ module.exports = {
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],
-        sans: ["var(--font-geist)", "system-ui", "sans-serif"],
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         mono: ["ui-monospace", "monospace"],
       },
       animation: {
