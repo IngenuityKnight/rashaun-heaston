@@ -42,17 +42,17 @@ export default function Contact() {
               <div>
                 <p className="eyebrow text-bone/30 mb-3">Direct</p>
                 <a
-                  href="mailto:hello@rashaunheaston.com"
+                  href="mailto:Rashauncreativeconsulting@gmail.com"
                   className="link-underline text-sm"
                 >
-                  hello@rashaunheaston.com
+                  Rashauncreativeconsulting@gmail.com
                 </a>
               </div>
               <div>
                 <p className="eyebrow text-bone/30 mb-3">Social</p>
                 <div className="flex flex-col gap-2.5">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/rashaun-heaston-7b5963234/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="link-underline text-sm text-bone/60 hover:text-bone transition-colors"
