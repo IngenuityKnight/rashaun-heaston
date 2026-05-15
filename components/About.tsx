@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { CALENDLY_URL } from "@/lib/links";
 
 const stats = [
   { value: "71M+", label: "Impressions" },
@@ -98,7 +99,12 @@ export default function About() {
 
             {/* CTA */}
             <motion.div {...fadeUp(0.38)} className="mt-10">
-              <a href="#contact" className="btn-primary">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
                 Book a Discovery Call
               </a>
             </motion.div>

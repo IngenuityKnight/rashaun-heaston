@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CALENDLY_URL } from "@/lib/links";
 
 const CheckIcon = () => (
   <svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true">
@@ -260,7 +261,12 @@ export default function Services() {
                 find the level of support that fits where you are right now.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="#contact" className="btn-primary">
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
                   Book a Discovery Call
                 </a>
                 <a href="#packages" className="btn-secondary">
@@ -321,7 +327,9 @@ export default function Services() {
               Packages
             </h2>
             <a
-              href="#contact"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="eyebrow text-ink/30 link-underline hidden md:inline-block hover:text-ink/60 transition-colors"
             >
               Not sure? Book a call →
@@ -437,7 +445,9 @@ export default function Services() {
 
                   <div className="md:self-end">
                     <a
-                      href="#contact"
+                      href={CALENDLY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={
                         pkg.dark
                           ? "inline-flex items-center gap-2 px-6 py-3 bg-bone text-ink eyebrow tracking-[0.1em] uppercase font-medium hover:bg-gold transition-colors duration-200 whitespace-nowrap"
@@ -554,7 +564,9 @@ export default function Services() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <a
-              href="#contact"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-bone text-ink eyebrow tracking-[0.1em] uppercase font-medium hover:bg-gold transition-colors duration-200"
               style={{ fontSize: "0.72rem" }}
             >
@@ -584,7 +596,9 @@ export default function Services() {
               </p>
             </div>
             <a
-              href="#contact"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-bone text-ink eyebrow tracking-[0.1em] uppercase font-medium hover:bg-gold transition-colors"
               style={{ fontSize: "0.65rem" }}
             >

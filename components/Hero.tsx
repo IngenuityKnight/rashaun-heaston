@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { CALENDLY_URL } from "@/lib/links";
 
 export default function Hero() {
   return (
@@ -46,7 +47,12 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="flex flex-wrap gap-3"
           >
-            <a href="#contact" className="btn-primary">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
               Work With Me
             </a>
             <a
