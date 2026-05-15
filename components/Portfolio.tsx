@@ -1,32 +1,59 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-const clients = [
+type PortfolioItem = {
+  title: string;
+  client: string;
+  type: string;
+  year: string;
+  result: string;
+  image?: string;
+  href?: string;
+};
+
+const portfolioItems: PortfolioItem[] = [
   {
-    name: "City of Detroit",
-    category: "Civic Communications",
-    years: "2022–Present",
+    title: "Civic Voice & Community Updates",
+    client: "City of Detroit",
+    type: "Civic Communications",
+    year: "2022–Present",
+    result:
+      "Social-first messaging for public programs, community moments, and resident-facing updates.",
   },
   {
-    name: "On Target Living",
-    category: "Brand Video & Podcast Growth",
-    years: "2021–2022",
+    title: "Founder-Led Wellness Content",
+    client: "On Target Living",
+    type: "Video & Podcast Growth",
+    year: "2021–2022",
+    result:
+      "Content direction across short-form education, podcast promotion, and brand storytelling.",
   },
   {
-    name: "NTM",
-    category: "Social Media Strategy",
-    years: "2020",
+    title: "Social Media Strategy System",
+    client: "NTM",
+    type: "Social Strategy",
+    year: "2020",
+    result:
+      "Positioning, content planning, and publishing structure for a sharper social presence.",
   },
   {
-    name: "Inner Views",
-    category: "Content Production",
-    years: "2019–2020",
+    title: "Interview-Led Content Production",
+    client: "Inner Views",
+    type: "Production",
+    year: "2019–2020",
+    result:
+      "Interview clips and social assets built to extend long-form conversations across platforms.",
   },
   {
-    name: "Royal Roots Organics",
-    category: "Founder & Creative Director",
-    years: "2024–Present",
+    title: "Organic Product Storytelling",
+    client: "Royal Roots Organics",
+    type: "Founder & Creative Director",
+    year: "2024–Present",
+    result:
+      "Brand voice, product education, and community-centered content for a growing wellness line.",
+    href: "https://www.royalrootsorganics.com/",
   },
 ];
 
@@ -44,30 +71,80 @@ export default function Portfolio() {
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">
             <p className="text-ink/45 text-sm leading-relaxed">
-              Case studies are in production. A record of engagements is below.
-              Full portfolio available upon request.
+              Selected social media strategy, content direction, and production
+              work. Upload campaign screenshots, reel thumbnails, or post
+              previews to turn each project into a visual sample.
             </p>
           </div>
         </div>
 
-        {clients.map((client, i) => (
-          <motion.div
-            key={client.name}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-20px" }}
-            transition={{ duration: 0.4, delay: i * 0.06 }}
-            className="border-t border-ink/10 py-6 grid grid-cols-[1fr_auto] md:grid-cols-[1fr_1fr_auto] items-center gap-4 group"
-          >
-            <h3 className="font-medium text-sm md:text-base group-hover:text-moss transition-colors duration-200">
-              {client.name}
-            </h3>
-            <span className="hidden md:block text-ink/40 text-sm">
-              {client.category}
-            </span>
-            <span className="eyebrow text-ink/25">{client.years}</span>
-          </motion.div>
-        ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 border-y border-ink/10">
+          {portfolioItems.map((item, i) => (
+            <motion.article
+              key={`${item.client}-${item.title}`}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ duration: 0.45, delay: i * 0.05 }}
+              className="bg-bone group"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden bg-sage/10">
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} social media portfolio sample for ${item.client}`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col justify-between p-6">
+                    <span className="eyebrow text-ink/30">{item.type}</span>
+                    <div>
+                      <p className="display text-4xl leading-none text-ink/20">
+                        Upload
+                        <br />
+                        Media
+                      </p>
+                      <p className="mt-4 max-w-[14rem] text-xs leading-relaxed text-ink/35">
+                        Add a thumbnail in /public/portfolio and set this
+                        project image path.
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="p-6 min-h-64 flex flex-col">
+                <div className="flex items-center justify-between gap-4 mb-8">
+                  <span className="eyebrow text-ink/35">{item.client}</span>
+                  <span className="eyebrow text-ink/25">{item.year}</span>
+                </div>
+
+                <h3 className="font-medium text-xl leading-tight mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-ink/50">
+                  {item.result}
+                </p>
+
+                <div className="mt-auto pt-8 flex items-center justify-between gap-4">
+                  <span className="eyebrow text-moss">{item.type}</span>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-underline text-sm text-ink/40 hover:text-ink transition-colors"
+                    >
+                      View work ↗
+                    </a>
+                  ) : null}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
 
         <div className="border-t border-ink/10 pt-8 mt-1">
           <a
